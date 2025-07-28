@@ -29,19 +29,17 @@ while True:
                 empleados[codigo]["Telefono"]=int(input("Ingrese el telefono"))
                 empleados[codigo]["Correo"]=input("Ingrese el correo")
                 empleados[codigo]["Evaluacion"]={}
-                cantidad_Evaluaciones = int(input("¿A Cuantas Evaluaciones realizara? "))
-                for j in range(cantidad_Evaluaciones):
-                    codigo_Evaluacion = input("Ingrese el Codigo de Evaluacion: ")
-                    empleados[codigo]["Evaluacion"][codigo_Evaluacion] = {
 
-                    }
-                    puntualidad=int("Ingrese la puntualidad")
-                    equipo=int("Ingrese elm trabajo en equipo")
-                    productividad=int("Ingrese productividad")
-                    observaciones=int("Ingrese las observaciones")
-                    promedio=int("Ingrese el promedio")
-                    estado=input("Ingrese su estado")
-                    empleados[codigo]["Evaluacion"][codigo_Evaluacion] ={
+
+                codigo_Evaluacion = input("Ingrese el Codigo de Evaluacion: ")
+                puntualidad=int(input("Ingrese la puntualidad"))
+                equipo=int(input("Ingrese elm trabajo en equipo"))
+                productividad=int(input("Ingrese productividad"))
+                observaciones=int(input("Ingrese las observaciones"))
+                promedio=int(input("Ingrese el promedio"))
+                estado=int(input("Ingrese su estado"))
+                empleados[codigo]["Evaluacion"][codigo_Evaluacion] =\
+                        {
                         "puntualidad":puntualidad,
                         "equipo":equipo,
                         "productividad":productividad,
@@ -58,6 +56,11 @@ while True:
                 print(f"Antiguedad: {datos['Antiguedad']}")
                 print(f"Telefono: {datos['Telefono']}")
                 print(f"Correo: {datos['Correo']}")
+                for codigo, evaluacion in datos["Evaluacion"].items():
+                    promedio = (evaluacion["puntualidad"] + evaluacion["equipo"] + evaluacion["Productividad"]+ evaluacion["observaciones"]) / 4
+                    print(f"  - Código: {codigo}")
+                    print(f"  - Nombre: ")
+
 
         case 3:
             print("empleados Evaluacion Satisfactoria")
