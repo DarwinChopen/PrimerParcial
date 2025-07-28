@@ -59,7 +59,11 @@ while True:
                 for codigo, evaluacion in datos["Evaluacion"].items():
                     promedio = (evaluacion["puntualidad"] + evaluacion["equipo"] + evaluacion["Productividad"]+ evaluacion["observaciones"]) / 4
                     print(f"  - Código: {codigo}")
-                    print(f"  - Nombre: ")
+                    print(f"     puntualidad: {evaluacion['puntualidad']}")
+                    print(f"     equipo: {evaluacion['equipo']}")
+                    print(f"     productividad: {evaluacion['productividad']}")
+                    print(f"     observaciones: {evaluacion['observaciones']}")
+                    print(f"     promedio: {evaluacion['promedio']}")
 
 
         case 3:
